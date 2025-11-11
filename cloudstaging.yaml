@@ -1,0 +1,29 @@
+substitutions:
+  _IMG_REPO: us-central1-docker.pkg.dev
+  _BASE_URL: "https://api.sandbox.turog.ng/backoffice"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+availableSecrets:
+  secretManager:
+    - versionName: projects/$PROJECT_NUMBER/secrets/adb-staging-feed-api-url/versions/latest
+      env: FEED_URL
+    - versionName: projects/$PROJECT_NUMBER/secrets/adb-backoffice-staging-identity-client-id/versions/latest
+      env: CLIENT_ID
+    - versionName: projects/$PROJECT_NUMBER/secrets/adb-backoffice-staging-identity-auth-url/versions/latest
+      env: AUTH_TOKEN_URL
+
+steps:
+  - name: gcr.io/cloud-builders/docker
+    id: Push Docker Images
+    entrypoint: bash
+    args: 
+      - '-c'
+      - |
+        docker buildx build --build-arg FEED_URL=$${FEED_URL}/${REPO_NAME} --build-arg BASE_URL=$${_BASE_URL} --build-arg CLIENT_ID=$${CLIENT_ID} --build-arg AUTH_TOKEN_URL=$${AUTH_TOKEN_URL} -t ${_IMG_REPO}/${PROJECT_ID}/adb-portals/${REPO_NAME}:staging .
+        docker push ${_IMG_REPO}/${PROJECT_ID}/adb-portals/${REPO_NAME}:staging
+    secretEnv:
+      - FEED_URL
+      - CLIENT_ID
+      - AUTH_TOKEN_URL

@@ -1,0 +1,54 @@
+{
+  "name": "backoffice-console-appshell",
+  "version": "1.1.0",
+  "description": "",
+  "keywords": [
+    "piral"
+  ],
+  "dependencies": {
+    "@adiba-banking-cloud/backoffice": "^0.0.89",
+    "@fontsource/poppins": "^5.1.0",
+    "@mantine/core": "^7.12.2",
+    "@mantine/form": "^7.12.2",
+    "@mantine/hooks": "^7.12.2",
+    "@mantine/modals": "^7.17.8",
+    "@mantine/notifications": "^7.12.2",
+    "@mantine/spotlight": "^7.12.2",
+    "@mantine/dates": "^7.17.8",
+    "framer-motion": "^12.18.1",
+    "piral": "1.8.5",
+    "piral-base": "1.8.5",
+    "piral-core": "1.8.5",
+    "piral-oidc": "^1.7.2",
+    "piral-page-layouts": "^1.8.5",
+    "piral-translate": "^1.6.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router": "^7.6.2",
+    "react-router-dom": "^7.6.2"
+  },
+  "scripts": {
+    "start": "piral debug",
+    "build": "piral build",
+    "postinstall": "piral declaration"
+  },
+  "app": "./src/index.html",
+  "types": "dist/index.d.ts",
+  "importmap": {
+    "imports": {},
+    "inherit": [
+      "piral-base",
+      "piral-core",
+      "piral"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/react-router-dom": "^5.3.3",
+    "piral-cli": "1.8.5",
+    "piral-cli-webpack5": "1.8.5",
+    "typescript": "^5.0.0"
+  }
+}

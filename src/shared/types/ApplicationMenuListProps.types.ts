@@ -1,0 +1,1 @@
+export type ApplicationMenuListProps = "retail-engine" | "ledgersync" | "process-engine" ;

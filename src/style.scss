@@ -1,0 +1,19 @@
+@import '@mantine/core/styles.css';
+@import '@adiba-banking-cloud/backoffice/build/styles.css';
+
+.backoffice-justify-switch .mantine-Switch-body{
+    justify-content: space-between;
+}
+
+.mantine-SegmentedControl-innerLabel {
+    font-weight: 300 !important;
+  }
+  
+  .mantine-Modal-header {
+    display: none !important;
+  }
+  
+  .input{
+    background-color: #FCFBFF !important;
+    border-color: #DFE5E5 !important;
+  }

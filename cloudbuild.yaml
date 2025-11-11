@@ -1,0 +1,30 @@
+substitutions:
+  _IMG_REPO: us-central1-docker.pkg.dev
+  _BASE_URL: "https://api.adiba.app/backoffice"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+availableSecrets:
+  secretManager:
+    - versionName: projects/$PROJECT_NUMBER/secrets/adb-backoffice-feed-api-url/versions/latest
+      env: FEED_URL
+    - versionName: projects/$PROJECT_NUMBER/secrets/adb-backoffice-identity-client-id/versions/latest
+      env: CLIENT_ID
+    - versionName: projects/$PROJECT_NUMBER/secrets/adb-backoffice-identity-auth-url/versions/latest
+      env: AUTH_TOKEN_URL
+
+steps:
+  - name: gcr.io/cloud-builders/docker
+    id: Push Docker Images
+    entrypoint: bash
+    args: 
+      - '-c'
+      - |
+        _TIMESTAMP=$(date +%s)
+        docker buildx build --build-arg FEED_URL=$${FEED_URL} --build-arg BASE_URL=$${_BASE_URL} --build-arg CLIENT_ID=$${CLIENT_ID} --build-arg AUTH_TOKEN_URL=$${AUTH_TOKEN_URL} -t ${_IMG_REPO}/${PROJECT_ID}/adb-portals/${REPO_NAME}:0x${SHORT_SHA}-$${_TIMESTAMP} .
+        docker push ${_IMG_REPO}/${PROJECT_ID}/adb-portals/${REPO_NAME}:0x${SHORT_SHA}-$${_TIMESTAMP}
+    secretEnv:
+      - FEED_URL
+      - CLIENT_ID
+      - AUTH_TOKEN_URL
