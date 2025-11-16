@@ -37,8 +37,8 @@ const fakeData: SimpleChartProps = {
     "NOV",
     "DEC",
   ], //TODO Translate
-  // series: [77, 122, 65, 77, 148, 280, 77, 122, 65, 77, 148, 280],
-  series: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  // series: [77, 122, 65, 77, 148, 280, 77, 122, 65, 77, 148, 280], 
+  series: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
   color: "#C8700B",
   withLegend: false,
 };

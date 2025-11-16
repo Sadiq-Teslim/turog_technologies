@@ -4,9 +4,9 @@ import { OrganizationStateProps } from "../../shared/types/OrganizationStateProp
 
 export const OidcClient = setupOidcClient({
   responseType: "code",
-  clientId: process.env.CLIENT_ID,
+  clientId: process.env.CLIENT_ID || "CLEITN",
   scopes: ["openid", "groups", "profile", "email", "phone"],
-  identityProviderUri: process.env.AUTH_TOKEN_URL,
+  identityProviderUri: process.env.AUTH_TOKEN_URL || "URL",
   postLogoutRedirectUri: "https://www.adiba.app",
   signInRedirectParams: {
     state: {

@@ -21,6 +21,8 @@ export const useActiveMenu = ({
     "retail-engine": retailEngineMenu,
     ledgersync: ledgerSyncMenu,
     "process-engine": processEngineMenu,
+    "open-banking": processEngineMenu,
+    "card-manager": processEngineMenu,
   };
 
   const previousPathRef = useRef(pathname);
