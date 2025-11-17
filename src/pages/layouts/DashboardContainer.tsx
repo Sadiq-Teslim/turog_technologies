@@ -4,7 +4,7 @@ import { useActiveApplication } from "../../shared/hooks/useActiveApplication";
 import { RetailEnginePage } from "../dashboard/RetailEngine";
 import { LedgerSyncPage } from "../dashboard/LedgerSync";
 import { ProcessEnginePage } from "../dashboard/ProcessEngine";
-import { PaymentEngine } from "../dashboard/PaymentEngine";
+import { Settlement} from "../dashboard/Settlement";
 import { CardManager } from "../dashboard/CardManager";
 import { OpenBanking } from "../dashboard/OpenBanking";
 import { CRMHelpdesk } from "../dashboard/CRMHelpdesk";
@@ -18,7 +18,7 @@ export const DashboardContainer: React.ComponentType<
     "retail-engine": <RetailEnginePage />,
     "ledgersync": <LedgerSyncPage />,
     "process-engine": <ProcessEnginePage/>,
-    "payment-engine": <PaymentEngine/>,
+    "settlement": <Settlement/>,
     "card-manager": <CardManager/>,
     "open-banking": <OpenBanking/>,
     "crm-helpdesk": <CRMHelpdesk/>,

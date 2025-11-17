@@ -3,6 +3,7 @@ import {
   CommonMenu,
   retailEngineMenu,
   ledgerSyncMenu,
+  settlementMenu,
 } from "../libs/SideMenus";
 import { useLocation } from "react-router";
 import { ApplicationMenuListProps } from "../types/ApplicationMenuListProps.types";
@@ -19,7 +20,8 @@ export const useActiveMenu = ({
   const pathname = location.pathname;
   const menuItems = {
     "retail-engine": retailEngineMenu,
-    ledgersync: ledgerSyncMenu,
+    "ledgersync": ledgerSyncMenu,
+    "settlement": settlementMenu,
     "process-engine": processEngineMenu,
     "open-banking": processEngineMenu,
     "card-manager": processEngineMenu,

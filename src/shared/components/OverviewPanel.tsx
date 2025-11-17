@@ -1,6 +1,7 @@
 import React from "react";
 import { OverviewPanelProps } from "../types/OverviewPanelProps.types";
-import { Icons, SimplePanel } from "@adiba-banking-cloud/backoffice";
+import { SimplePanel } from "@adiba-banking-cloud/backoffice";
+import { TrendUp, MoneySend, Warning2, Clock, InfoCircle } from "iconsax-react";
 import { Box, Divider, Group, Space, Stack, Text, Title } from "@mantine/core";
 
 const CONTAINER_GAP = 5;
@@ -10,7 +11,11 @@ export const OverviewPanel = ({ ...props }: OverviewPanelProps) => {
     <SimplePanel {...props}>
       <Stack align="stretch">
         <Group gap={CONTAINER_GAP} mih={24} wrap="nowrap">
-          <Icons {...props.title?.icon} variant="Outline" />
+          {props.title?.icon?.name === "TrendUp" && <TrendUp size={20} color={props.title?.icon?.color || "#22C55E"} />}
+          {props.title?.icon?.name === "MoneySend" && <MoneySend size={20} color={props.title?.icon?.color || "#22C55E"} />}
+          {props.title?.icon?.name === "Warning2" && <Warning2 size={20} color={props.title?.icon?.color || "#F59E0B"} />}
+          {props.title?.icon?.name === "Clock" && <Clock size={20} color={props.title?.icon?.color || "#F59E0B"} />}
+          {props.title?.icon?.name === "InfoCircle" && <InfoCircle size={20} color={props.title?.icon?.color || "#F43F5E"} />}
           <Text fz={"sm"} fw={300}>
             {props.title?.label}
           </Text>

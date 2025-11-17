@@ -1,6 +1,6 @@
 import React from "react";
 import { Group, Stack, Text, Badge, Button, ActionIcon } from "@mantine/core";
-import { AlarmItemProps } from "./AlarmList.types";
+import { AlarmItemProps } from "../types/open-banking/AlarmList.types";
 
 export const AlarmItem: React.FC<AlarmItemProps> = ({
   id,

@@ -1,6 +1,6 @@
 import React from "react";
 import { Stack } from "@mantine/core";
-import { AlarmListProps } from "./AlarmList.types";
+import { AlarmListProps } from "../types/open-banking/AlarmList.types";
 import { AlarmItem } from "./AlarmItem";
 
 export const AlarmList: React.FC<AlarmListProps> = ({ alarms }) => {
