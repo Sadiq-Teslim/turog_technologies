@@ -14,7 +14,7 @@ export const PayoutErrorBreakdownWidget = () => {
         <Text size="sm" c="adiba.4" mb={8}>
           {panel.subtitle}
         </Text>
-        <DonutChart {...panel.chart} />
+        <DonutChart {...panel.chart} withLegend />
         <Box mt={24}>
           <Alert
             color="yellow"

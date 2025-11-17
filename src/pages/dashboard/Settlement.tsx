@@ -42,7 +42,7 @@ export const Settlement = () => {
         <HighPriorityPayoutErrorsWidget />
       </Grid.Col>
       <Grid.Col span={{ base: 12, md: 6 }}>
-        <div style={{ minHeight: 480 }}>
+        <div style={{ minHeight: 380 }}>
           <PartnerSettlementStatusWidget />
         </div>
       </Grid.Col>

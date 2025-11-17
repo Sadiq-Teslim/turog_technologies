@@ -11,10 +11,10 @@ export const CollectionFailureRateByChannelWidget = () => {
         <Text size="sm" c="adiba.4" mb={8}>{subtitle}</Text>
         <Box>
           <StackedColumn
-            colors={chart.colors}
-            series={chart.series}
+            colors={["#F43F5E", "#22C55E"]}
+            series={[chart.series[1], chart.series[0]]}
             xAxisLabel={chart.xAxisLabel}
-            yAxisLabel={["Success", "Failure"]}
+            yAxisLabel={["Failure", "Success"]}
             equalizer={false}
             withLegend={false}
           />
